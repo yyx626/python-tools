@@ -1,3 +1,4 @@
+# 天地图 底图 与 注记 叠加
 from PIL import Image
 import os
 
@@ -18,6 +19,7 @@ def img_overlay(vec_jpg_path, cva_jpg_path, output_jpg_path, x, y):
         print(str(x) + '_' + str(y) + '叠加成功')
     except Exception:
         print(str(x) + '_' + str(y) + '叠加失败,重试')
+        img_overlay(vec_jpg_path, cva_jpg_path, output_jpg_path, x, y)
 
 
 zoom = 7  # 下载切片的zoom
