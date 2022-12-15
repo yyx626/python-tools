@@ -1,6 +1,7 @@
 # 天地图 底图 与 注记 叠加
 from PIL import Image
 import os
+import math
 
 
 def img_overlay(vec_jpg_path, cva_jpg_path, output_jpg_path, x, y):
@@ -22,7 +23,22 @@ def img_overlay(vec_jpg_path, cva_jpg_path, output_jpg_path, x, y):
         img_overlay(vec_jpg_path, cva_jpg_path, output_jpg_path, x, y)
 
 
+# 经纬度反算切片行列号  3857坐标系
+def deg2num(lat_deg, lon_deg, zoom):
+    lat_rad = math.radians(lat_deg)
+    n = 2.0 ** zoom
+    xtile = int((lon_deg + 180.0) / 360.0 * n)
+    ytile = int((1.0 - math.log(math.tan(lat_rad) + (1 / math.cos(lat_rad))) / math.pi) / 2.0 * n)
+    return (xtile, ytile)
+
+
 zoom = 7  # 下载切片的zoom
+
+# 中国
+# 69.48,55.74 左上角
+# 137.51,2.22 右下角
+# lefttop = deg2num(55.74, 69.48, zoom)  # 下载切片的左上角角点
+# rightbottom = deg2num(2.22, 137.51, zoom)
 
 # 下载全球影像数据lefttop=[0,0],rightbottom=[2**zoom,2**zoom]
 # lefttop[0]~rightbottom[0]为x范围
