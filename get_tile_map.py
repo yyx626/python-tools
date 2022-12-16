@@ -78,10 +78,10 @@ for x in range(lefttop[0], rightbottom[0]):
         # tilepath = 'http://mt2.google.cn/vt/lyrs=y&hl=zh-CN&gl=CN&src=app&x='+str(x)+'&y='+str(y)+'&z='+str(zoom)+'&s=G'
 
         # 天地图-地图
-        tilepath = 'http://t2.tianditu.com/DataServer?T=vec_w&x=' + str(x) + '&y=' + str(y) + '&l=' + str(
+        tilepath = 'http://t2.tianditu.gov.cn/DataServer?T=vec_w&x=' + str(x) + '&y=' + str(y) + '&l=' + str(
             zoom) + '&tk=c25a0ad23db089f1f3b7d8874b796cab'
         # 天地图-标注
-        # tilepath = 'http://t0.tianditu.com/DataServer?T=cva_w&x='+str(x)+'&y='+str(y)+'&l='+str(zoom)+'&tk=5d22d49fdc586cb5caed68bfb12d1e6b'
+        # tilepath = 'http://t0.tianditu.gov.cn/DataServer?T=cva_w&x='+str(x)+'&y='+str(y)+'&l='+str(zoom)+'&tk=5d22d49fdc586cb5caed68bfb12d1e6b'
 
         # 天地图-影像
         # tilepath = 'http://t0.tianditu.gov.cn/DataServer?T=img_w&x=' + str(x) + '&y=' + str(y) + '&l=' + str(zoom) + '&tk=5d22d49fdc586cb5caed68bfb12d1e6b'
